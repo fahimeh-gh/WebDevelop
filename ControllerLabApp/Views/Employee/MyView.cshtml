@@ -1,0 +1,60 @@
+﻿@using ControllerLabApp.Models
+@model Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+</head>
+<body>
+    @*Welcome to MVC 5 Step by Step learning*@
+
+    @*<span style="font-size: 9pt;">return view("MyView");</span>*@
+
+    @*<div>
+            @{
+                ControllerLabApp.Models.Employee emp = (ControllerLabApp.Models.Employee)
+                    ViewData["Employee"];
+            }
+            <b>EmployeeDetails </b><br />
+            @*Employee Name : @emp.FirstName @emp.LastName <br/>
+        *Employee Name : @(emp.FirstName + " " + emp.LastName) <br />
+        Employee Salary : @emp.Salary.ToString("C")
+        </div>*@
+
+    @*<div>
+            @{
+                ControllerLabApp.Models.Employee emp = (ControllerLabApp.Models.Employee)
+                    ViewBag.Employee;
+            }
+            EmployeeDetails
+
+            Employee Name : @emp.FirstName  @emp.LastName
+
+            Employee Salary : @emp.Salary.ToString("C")
+        </div>*@
+
+    <div>       
+        <b>EmployeeDetails</b><br/>
+        Employee Name : @Model.FirstName @Model.LastName <br/>
+        
+        @if (Model.Salary > 15000)
+        {
+            <span style="background-color:yellow">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
+        else
+        {
+            <span style="background-color:green">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
+    </div>
+</body>
+</html>

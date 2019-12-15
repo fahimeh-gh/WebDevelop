@@ -1,0 +1,39 @@
+﻿@using ControllerLabApp.ViewModels
+@model EmployeeListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView3</title>
+</head>
+<body>
+    <div style="text-align:left">
+        Hello, @Model.UserName
+        <a href="/Authentication/Logout">Logout</a>
+    </div>
+    <hr />
+    <a href="/Employee/AddNew">Add New</a>
+    <div>
+        <table border="1">
+            <span style="font-size: 9pt;">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                </tr>
+                @foreach (EmployeeViewModel item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    </tr>
+                }
+            </span>
+        </table>
+    </div>
+</body>
+</html>
