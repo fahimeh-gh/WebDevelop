@@ -45,5 +45,12 @@ namespace ControllerLabApp.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
+        //Fahimeh Test Code
+        public ActionResult LogoutForTest()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
     }
 }
